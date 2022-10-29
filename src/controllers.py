@@ -62,7 +62,6 @@ def delete_task(request):
         return '400 BAD REQUEST', None
 
     id = request.path.split('/')[-2]
-    print(id)
     with db.engine.begin() as connection:
         statement = delete(Task).where(Task.id == id)
         connection.execute(statement)

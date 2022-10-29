@@ -17,7 +17,6 @@ class TaskView extends React.Component{
 
   async componentDidMount() {
     const todoItems = await getTodoList();
-    console.log(this.props.match.params.id, todoItems)
     const task = todoItems.filter(item => this.props.match.params.id === item.id.toString())[0];
     this.setState({ taskText: task.name });
   }
