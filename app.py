@@ -1,4 +1,5 @@
-from waitress import serve
+from dotenv import load_dotenv
+load_dotenv()
 
 from src.dispatcher import get_handler
 from src.utils import Request
@@ -26,5 +27,6 @@ def app(environ, start_response):
 
 
 if __name__ == '__main__':
+    from waitress import serve
     print('Server is running')
     serve(app, host='0.0.0.0', port=5000)
