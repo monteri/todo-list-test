@@ -66,3 +66,11 @@ def delete_task(request):
         statement = delete(Task).where(Task.id == id)
         connection.execute(statement)
     return '200 OK', {}
+
+
+@api_endpoint
+def clear_bd(request):
+    with db.engine.begin() as connection:
+        statement = delete(Task)
+        connection.execute(statement)
+    return '200 OK', {}
