@@ -1,8 +1,6 @@
 from sqlalchemy.ext. declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
-from src.db.settings import db
-
 DeclBase = declarative_base()
 
 
@@ -15,4 +13,5 @@ class Task(DeclBase):
 if __name__ == '__main__':
     from dotenv import load_dotenv
     load_dotenv()
+    from src.db.settings import db
     DeclBase.metadata.create_all(db.engine)
