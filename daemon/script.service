@@ -1,11 +1,11 @@
 [Unit]
-Description=Demo Service
+Description=Clear DB
 
 [Service]
 Type=simple
 User=root
 Group=root
-ExecStart=/home/ubuntu/todo-list-test/venv/bin/python3 /home/ubuntu/todo-list-test/script.py
+ExecStart=/home/ubuntu/todo-list-test/venv/bin/python3 /home/ubuntu/todo-list-test/daemon/script.py
 Restart=always
 WorkingDirectory=/tmp
 Nice=19
